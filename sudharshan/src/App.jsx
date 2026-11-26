@@ -15,7 +15,6 @@ import ScreenReaderOverlay from './components/ui/ScreenReaderOverlay';
 import { useDocumentMeta } from './hooks/useDocumentMeta';
 import useViewport, { CAMERA_BY_CATEGORY } from './hooks/useViewport';
 import posthog from 'posthog-js';
-import { loadSanityData } from './hooks/useSanityData';
 
 // Initialize PostHog only when a key is configured.
 const posthogKey = import.meta.env.VITE_POSTHOG_KEY;
@@ -280,8 +279,6 @@ export default function App() {
   // Preload browser-based images (for standard <img> tags) immediately upon mounting App
   // This ensures they are in the network waterfall during the initial loading phase.
   useEffect(() => {
-    loadSanityData();
-
     const filteredImages = filterTexturesByDevice(IMAGE_ASSETS, supportsHover);
     scheduleProgressivePreload(filteredImages, 8, 20);
   }, []);

@@ -8,7 +8,6 @@ import SkyChunk, { CHUNK_LENGTH, ROOM_Z } from './SkyChunk';
 import { useScene } from '../../../../context/SceneContext';
 import '../../shaders/RevealBasicMaterial'; // Registers brush-stroke reveal for BasicMaterial
 import { isTouchDevice } from '../../../../utils/deviceDetect';
-import { useAwards } from '../../../../hooks/useSanityData';
 
 // Reusable Vector3 to avoid allocations in event handlers
 const _tempVec3 = new THREE.Vector3();
@@ -453,9 +452,7 @@ const AWARDS_DATA = {
  */
 const AwardsMilestone = ({ z, scrollProgressRef }) => {
     const isTouch = isTouchDevice();
-    // Pobieranie danych nagród z Sanity (z fallbackiem)
-    const sanityAwards = useAwards();
-    const awardsData = sanityAwards || AWARDS_DATA;
+    const awardsData = AWARDS_DATA;
 
     useThree();
     const { openOverlay } = useScene();    const groupRef = useRef();

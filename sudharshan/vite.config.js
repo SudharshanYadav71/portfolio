@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteCompression from 'vite-plugin-compression';
-import { generateSeoHtml } from './seo-plugin.js';
 
 const START_PAGE_PATHS = new Set(['/start', '/start/']);
 
@@ -52,8 +51,7 @@ export default defineConfig({
       }
     },
     react(),
-    viteCompression(),
-    generateSeoHtml()
+    viteCompression()
   ],
   build: {
     rollupOptions: {
@@ -63,15 +61,6 @@ export default defineConfig({
         gallery: 'gallery.html',
         contact: 'contact.html',
         studio: 'studio.html'
-      }
-    }
-  },
-  server: {
-    proxy: {
-      '/sanity-cdn': {
-        target: 'https://cdn.sanity.io',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/sanity-cdn/, '')
       }
     }
   }

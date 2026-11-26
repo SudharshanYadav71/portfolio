@@ -8,7 +8,6 @@ The full application lives in [`sudharshan/`](sudharshan/).
 
 - Interactive 3D environment with smooth camera transitions and animations
 - Virtual routing: `/gallery`, `/about`, and `/contact` serve real pages and teleport the camera into the matching 3D room
-- Content managed through Sanity CMS (project `eqbbmxzy`, dataset `production`)
 - Adaptive device tiering: resolution, antialiasing and texture strictness scale with the device
 - Asynchronous shader compilation and baked global tinting for stable performance
 - Responsive for desktop and mobile, with hidden semantic SEO content for crawlers
@@ -18,7 +17,6 @@ The full application lives in [`sudharshan/`](sudharshan/).
 - React 19 + Vite 7
 - Three.js / React Three Fiber / drei
 - GSAP
-- Sanity CMS
 - JavaScript (ES modules), CSS3, WebGL
 
 ## Getting Started
