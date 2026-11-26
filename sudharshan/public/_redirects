@@ -1,0 +1,19 @@
+# Ten plik służy tylko do wewnętrznych przekierowań ścieżek np:
+# /stara-strona /nowa-strona 301
+# Przekierowania z www na non-www ustawiamy bezpośrednio w zakładce "Rules -> Redirect Rules" w panelu głównym domeny w Cloudflare.
+
+# Lekka, statyczna strona startowa. Reguły dokładne muszą być przed trasami SPA.
+/start  /start/index.html  200
+/start/ /start/index.html  200
+
+# Deep links do pokoi 3D — each route has a real emitted HTML file (dist/about.html etc.).
+/about   /about.html   200
+/about/  /about.html   200
+/gallery /gallery.html 200
+/gallery/ /gallery.html 200
+/contact /contact.html 200
+/contact/ /contact.html 200
+/studio  /studio.html  200
+/studio/ /studio.html  200
+
+# Pozostałe ścieżki obsługuje automatyczny fallback SPA Cloudflare Pages.
